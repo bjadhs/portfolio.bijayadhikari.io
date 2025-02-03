@@ -1,4 +1,15 @@
 @import "tailwindcss";
 
+@theme {
+  --color-primary-100: #7C86FF;
+}
+
+li {
+  @apply text-gray-400 hover:text-indigo-500  hover:border-b-2 hover:border-indigo-500 transition-all duration-300 hover:scale-105;
+}
+
+button {
+  @apply bg-indigo-500 hover:bg-indigo-200 text-white hover:text-indigo-500  px-4 py-2 border border-indigo-500 rounded-md flex items-center space-x-2;
+}
 
 

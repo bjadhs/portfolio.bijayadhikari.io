@@ -32,7 +32,10 @@ const Header = () => {
           </li>
         </ul>
 
-        <button className='bg-indigo-400 text-white px-4 py-2 border border-indigo-700 rounded-md flex items-center space-x-2'>
+        <button
+          onClick={() => alert('Hi, I am bijaya adhikari.')}
+          className='message-btn'
+        >
           <Mail size={16} />
           <p className='text-xs'>Send Message</p>
         </button>
