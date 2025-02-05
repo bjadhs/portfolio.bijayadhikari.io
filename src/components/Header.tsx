@@ -1,7 +1,7 @@
 import { Mail } from 'lucide-react';
 const Header = () => {
   return (
-    <header className='sticky top-0 z-50 max-w-7xl mx-auto py-2 px-6 flex justify-between items-center  bg-white shadow-md'>
+    <header className='sticky top-0 z-50 max-w-7xl mx-auto py-2 px-10 flex justify-between items-center  bg-white shadow-md'>
       {/* Left Logo */}
       <div className='flex items-center space-x-2'>
         <h1 className='flex justify-center items-center bg-indigo-400 text-sm text-white font-extrabold rounded-full w-8 h-8 p-2 shadow-md'>
