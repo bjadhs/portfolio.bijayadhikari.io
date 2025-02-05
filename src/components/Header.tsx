@@ -19,7 +19,7 @@ const Header = () => {
       <nav className='flex items-center space-x-4'>
         <ul className='flex justify-center items-center space-x-4 text-gray-500 text-sm'>
           <li>
-            <a href='#home'>Home</a>
+            <a href='#banner'>Home</a>
           </li>
           <li>
             <a href='#about'>About</a>

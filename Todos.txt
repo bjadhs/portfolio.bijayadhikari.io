@@ -1,4 +1,7 @@
 Todos for my portfolio
 [✔️] Routing in React
 [✔️] Simple Header
-[ ] Hover effect on nav and send message button
+[✔️] Hover effect on nav and send message button
+[ ] Banner: my intro, call to action and my picture
+[ ] background svg or circle effect
+[ ] Stack I am familiar moving right to left
