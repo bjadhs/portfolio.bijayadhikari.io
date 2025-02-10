@@ -1,3 +1,4 @@
+import Stacks from '../components/Stacks';
 import Banner from '../components/Banner';
 
 const Home = () => {
@@ -6,6 +7,9 @@ const Home = () => {
       {/* Home */}
       <div id='banner' className='h-screen pt-14'>
         <Banner />
+      </div>
+      <div id='about' className='h-56'>
+        <Stacks />
       </div>
       <div id='about' className='h-56'>
         About

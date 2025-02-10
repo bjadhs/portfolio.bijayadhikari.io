@@ -2,6 +2,9 @@ Todos for my portfolio
 [✔️] Routing in React
 [✔️] Simple Header
 [✔️] Hover effect on nav and send message button
-[ ] Banner: my intro, call to action and my picture
-[ ] background svg or circle effect
-[ ] Stack I am familiar moving right to left
+[✔️] Banner: my intro, call to action and my picture
+[✔️] background svg or circle effect
+[ ] 2H - Contact and send message dialog a form connect to send api
+[ ] 1H - Stack I am familiar moving right to left animation
+[ ] 2H Project section
+[ ]
