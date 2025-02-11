@@ -1,5 +1,9 @@
 import { Mail } from 'lucide-react';
+import { useState } from 'react';
+import MessageModel from './MessageModel';
+
 const Header = () => {
+  const [isModelOpen, setIsModelOpen] = useState(false);
   return (
     <header className='sticky top-0 z-50 max-w-7xl mx-auto py-2 px-10 flex justify-between items-center  bg-white shadow-md'>
       {/* Left Logo */}
@@ -33,13 +37,14 @@ const Header = () => {
         </ul>
 
         <button
-          onClick={() => alert('Hi, I am bijaya adhikari.')}
+          onClick={() => setIsModelOpen(!isModelOpen)}
           className='message-btn'
         >
           <Mail size={16} />
           <p className='text-xs'>Send Message</p>
         </button>
       </nav>
+      {isModelOpen && <MessageModel setIsModelOpen={setIsModelOpen} />}
     </header>
   );
 };
