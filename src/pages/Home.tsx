@@ -3,7 +3,7 @@ import Banner from '../components/Banner';
 
 const Home = () => {
   return (
-    <div className='h-screen max-w-7xl mx-auto py-2 pl-10'>
+    <div className='min-h-screen max-w-7xl mx-auto py-2 pl-10'>
       {/* Home */}
       <div id='banner' className='h-screen pt-14'>
         <Banner />
