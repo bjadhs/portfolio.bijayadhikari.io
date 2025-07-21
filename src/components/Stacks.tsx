@@ -7,7 +7,7 @@ const stacks = [
   {
     id: 2,
     title: 'NodeJS',
-    img: 'icons/nodejs-2.svg',
+    img: 'icons/nodejs-icon.svg',
   },
   {
     id: 3,
@@ -28,14 +28,14 @@ const stacks = [
 
 const Stacks = () => {
   return (
-    <div className='relative'>
+    <div className='w-full flex justify-center items-center space-x-20 p-4 bg-blue-50'>
       {stacks.map((stack, index) => {
         return (
           <img
             key={index}
             src={stack.img}
             alt={stack.title}
-            className={`absolute left-${stack.id * 20} w-15 h-15 bg-white`}
+            className='w-30 h-15'
           />
         );
       })}

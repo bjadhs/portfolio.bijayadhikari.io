@@ -5,7 +5,7 @@ import MessageModel from './MessageModel';
 const Header = () => {
   const [isModelOpen, setIsModelOpen] = useState(false);
   return (
-    <header className='sticky top-0 z-50 max-w-7xl mx-auto py-2 px-10 flex justify-between items-center  bg-white shadow-md'>
+    <header className='sticky top-0 z-50 max-w-9xl mx-auto py-4 px-36 flex justify-between items-center  bg-white shadow-md'>
       {/* Left Logo */}
       <div className='flex items-center space-x-2'>
         <h1 className='flex justify-center items-center bg-indigo-400 text-sm text-white font-extrabold rounded-full w-8 h-8 p-2 shadow-md'>
@@ -44,7 +44,9 @@ const Header = () => {
           <p className='text-xs'>Send Message</p>
         </button>
       </nav>
-      {isModelOpen && <MessageModel setIsModelOpen={setIsModelOpen} />}
+      {isModelOpen && (
+        <MessageModel setIsModelOpen={setIsModelOpen} isModelOpen={false} />
+      )}
     </header>
   );
 };

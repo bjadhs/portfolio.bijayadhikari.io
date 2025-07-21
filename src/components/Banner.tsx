@@ -1,8 +1,14 @@
-import { ArrowRight, Download, Github, Linkedin, Twitter } from 'lucide-react';
+import {
+  ArrowRight,
+  Download,
+  GithubIcon,
+  LinkedinIcon,
+  TwitterIcon,
+} from 'lucide-react';
 
 const Banner = () => {
   return (
-    <section className='relative min-h-screen overflow-hidden bg-gradient-to-br from-white to-gray-50 py-16 md:py-20 lg:py-24'>
+    <section className='relative min-h-screen overflow-hidden bg-gradient-to-br from-white to-gray-50'>
       {/* Background decorative elements */}
       <div className='absolute inset-0 overflow-hidden'>
         <img
@@ -83,19 +89,19 @@ const Banner = () => {
                 href='https://github.com'
                 className='rounded-full bg-gray-100 p-2 text-gray-600 transition-all hover:bg-indigo-100 hover:text-indigo-600 hover:shadow-md'
               >
-                <Github size={22} />
+                <GithubIcon size={22} />
               </a>
               <a
                 href='https://linkedin.com'
                 className='rounded-full bg-gray-100 p-2 text-gray-600 transition-all hover:bg-indigo-100 hover:text-indigo-600 hover:shadow-md'
               >
-                <Linkedin size={22} />
+                <LinkedinIcon size={22} />
               </a>
               <a
                 href='https://twitter.com'
                 className='rounded-full bg-gray-100 p-2 text-gray-600 transition-all hover:bg-indigo-100 hover:text-indigo-600 hover:shadow-md'
               >
-                <Twitter size={22} />
+                <TwitterIcon size={22} />
               </a>
             </div>
           </div>

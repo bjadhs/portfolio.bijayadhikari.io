@@ -4,16 +4,16 @@ import Projects from '../components/Projects';
 
 const Home = () => {
   return (
-    <div className='min-h-screen max-w-7xl mx-auto py-2 pl-10'>
+    <div className='max-w-9xl mx-auto py-2 px-10'>
       {/* Home */}
-      <div id='banner' className='h-screen pt-14'>
+      <div id='banner'>
         <Banner />
       </div>
-      <div id='about' className='h-56'>
+      <div id='about'>
         <Stacks />
       </div>
 
-      <div id='project' className='h-56'>
+      <div id='project'>
         <Projects />
       </div>
     </div>

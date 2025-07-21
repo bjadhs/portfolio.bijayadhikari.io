@@ -1,10 +1,13 @@
 import { projects } from '../data';
 import { ExternalLink, Github } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
 
 const Projects = () => {
+  const navigate = useNavigate();
+
   return (
-    <section className='py-20 bg-gradient-to-br from-slate-50 to-blue-50'>
-      <div className='container mx-auto px-6'>
+    <section className='min-h-screen bg-gradient-to-br from-slate-50 to-blue-50'>
+      <div className='container mx-auto px-10 py-16'>
         <div className='text-center mb-16'>
           <h2 className='text-4xl md:text-5xl font-bold text-gray-900 mb-6'>
             Featured Projects
@@ -105,6 +108,9 @@ const Projects = () => {
 
         <div className='text-center mt-12'>
           <button
+            onClick={() => {
+              navigate('/projects');
+            }}
             className='px-8 py-3 bg-gradient-to-r from-blue-600 to-purple-600 
             text-white font-semibold rounded-full hover:from-blue-700 hover:to-purple-700 
             hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl'
