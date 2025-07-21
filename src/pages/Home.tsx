@@ -1,5 +1,6 @@
 import Stacks from '../components/Stacks';
 import Banner from '../components/Banner';
+import Projects from '../components/Projects';
 
 const Home = () => {
   return (
@@ -11,11 +12,9 @@ const Home = () => {
       <div id='about' className='h-56'>
         <Stacks />
       </div>
-      <div id='about' className='h-56'>
-        About
-      </div>
+
       <div id='project' className='h-56'>
-        Project
+        <Projects />
       </div>
     </div>
   );
