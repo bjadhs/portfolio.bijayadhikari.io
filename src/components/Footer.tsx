@@ -7,7 +7,6 @@ const Footer = () => {
             <a
               href='https://github.com'
               target='_blank'
-              rel='noopener noreferrer'
               className='rounded-full bg-gray-100 p-2 text-gray-600 transition-all hover:bg-indigo-100 hover:text-indigo-600 hover:shadow-md'
               aria-label='Github'
             >
@@ -28,7 +27,6 @@ const Footer = () => {
             <a
               href='https://linkedin.com'
               target='_blank'
-              rel='noopener noreferrer'
               className='rounded-full bg-gray-100 p-2 text-gray-600 transition-all hover:bg-indigo-100 hover:text-indigo-600 hover:shadow-md'
               aria-label='LinkedIn'
             >
@@ -51,7 +49,6 @@ const Footer = () => {
             <a
               href='https://twitter.com'
               target='_blank'
-              rel='noopener noreferrer'
               className='rounded-full bg-gray-100 p-2 text-gray-600 transition-all hover:bg-indigo-100 hover:text-indigo-600 hover:shadow-md'
               aria-label='Twitter'
             >
@@ -71,7 +68,7 @@ const Footer = () => {
             </a>
           </div>
           <p className='text-gray-600 text-sm'>
-            © {new Date().getFullYear()} Bijaya Adhikari. All rights reserved.
+            Bijaya Adhikari © {new Date().getFullYear()} All rights reserved.
           </p>
         </div>
       </div>
