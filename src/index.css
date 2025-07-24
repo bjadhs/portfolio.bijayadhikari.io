@@ -1,15 +1,196 @@
 @import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Satoshi:wght@300;400;500;600;700;800;900&display=swap');
 
 @theme {
-  --color-primary-100: #7C86FF;
+  /* Color System - Dark First */
+  --color-background: var(--color-bg-primary);
+  --color-foreground: var(--color-text-primary);
+  
+  /* Dark Theme Colors */
+  --color-bg-primary: #0a0a0a;
+  --color-bg-secondary: #1a1a1a;
+  --color-bg-tertiary: #2a2a2a;
+  --color-bg-surface: rgba(255, 255, 255, 0.05);
+  --color-bg-glass: rgba(255, 255, 255, 0.08);
+  
+  --color-text-primary: #ffffff;
+  --color-text-secondary: #b3b3b3;
+  --color-text-tertiary: #808080;
+  --color-text-muted: #666666;
+  
+  /* Neon Accents */
+  --color-neon-cyan: #00ffff;
+  --color-neon-purple: #9945ff;
+  --color-neon-pink: #ff006e;
+  --color-neon-green: #39ff14;
+  --color-neon-orange: #ff6700;
+  
+  /* Accent Gradients */
+  --color-gradient-cyan: linear-gradient(135deg, #00ffff, #0080ff);
+  --color-gradient-purple: linear-gradient(135deg, #9945ff, #00ffff);
+  --color-gradient-pink: linear-gradient(135deg, #ff006e, #8338ec);
+  --color-gradient-green: linear-gradient(135deg, #39ff14, #00ff88);
+  
+  /* Semantic Colors */
+  --color-primary: var(--color-neon-cyan);
+  --color-secondary: var(--color-neon-purple);
+  --color-accent: var(--color-neon-pink);
+  --color-success: var(--color-neon-green);
+  --color-warning: var(--color-neon-orange);
+  
+  /* Border & Glass Effects */
+  --color-border: rgba(255, 255, 255, 0.1);
+  --color-border-glow: rgba(0, 255, 255, 0.3);
+  --color-shadow-glow: 0 0 20px rgba(0, 255, 255, 0.15);
+  
+  /* Typography Scale - Fluid */
+  --font-sans: 'Satoshi', 'Inter', system-ui, -apple-system, sans-serif;
+  --text-xs: clamp(0.75rem, 0.7rem + 0.25vw, 0.875rem);
+  --text-sm: clamp(0.875rem, 0.8rem + 0.375vw, 1rem);
+  --text-base: clamp(1rem, 0.9rem + 0.5vw, 1.125rem);
+  --text-lg: clamp(1.125rem, 1rem + 0.625vw, 1.25rem);
+  --text-xl: clamp(1.25rem, 1.1rem + 0.75vw, 1.5rem);
+  --text-2xl: clamp(1.5rem, 1.3rem + 1vw, 1.875rem);
+  --text-3xl: clamp(1.875rem, 1.6rem + 1.375vw, 2.25rem);
+  --text-4xl: clamp(2.25rem, 1.9rem + 1.75vw, 3rem);
+  --text-5xl: clamp(2.75rem, 2.3rem + 2.25vw, 3.75rem);
+  --text-6xl: clamp(3.25rem, 2.7rem + 2.75vw, 4.5rem);
+  --text-7xl: clamp(3.75rem, 3.1rem + 3.25vw, 5.25rem);
+  --text-8xl: clamp(4.5rem, 3.7rem + 4vw, 6rem);
+  --text-9xl: clamp(5.25rem, 4.3rem + 4.75vw, 7rem);
 }
 
+/* Light Theme Override */
+:root[data-theme="light"] {
+  --color-bg-primary: #fafafa;
+  --color-bg-secondary: #f5f5f5;
+  --color-bg-tertiary: #e5e5e5;
+  --color-bg-surface: rgba(0, 0, 0, 0.05);
+  --color-bg-glass: rgba(255, 255, 255, 0.6);
+  
+  --color-text-primary: #0a0a0a;
+  --color-text-secondary: #404040;
+  --color-text-tertiary: #737373;
+  --color-text-muted: #a3a3a3;
+  
+  --color-border: rgba(0, 0, 0, 0.1);
+  --color-border-glow: rgba(0, 255, 255, 0.4);
+  --color-shadow-glow: 0 0 20px rgba(0, 255, 255, 0.1);
+}
+
+/* Reset and Base Styles */
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: var(--color-bg-primary);
+  color: var(--color-text-primary);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Glass Morphism Utilities */
+.glass {
+  background: var(--color-bg-glass);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid var(--color-border);
+}
+
+.glass-strong {
+  background: var(--color-bg-surface);
+  backdrop-filter: blur(30px);
+  -webkit-backdrop-filter: blur(30px);
+  border: 1px solid var(--color-border-glow);
+}
+
+/* Neon Glow Effects */
+.neon-glow {
+  box-shadow: var(--color-shadow-glow);
+}
+
+.neon-text-cyan {
+  color: var(--color-neon-cyan);
+  text-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
+}
+
+.neon-text-purple {
+  color: var(--color-neon-purple);
+  text-shadow: 0 0 10px rgba(153, 69, 255, 0.5);
+}
+
+.neon-text-pink {
+  color: var(--color-neon-pink);
+  text-shadow: 0 0 10px rgba(255, 0, 110, 0.5);
+}
+
+/* Grid System */
+.grid-12 {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 1.5rem;
+}
+
+@media (max-width: 1024px) {
+  .grid-12 {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .grid-12 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-bg-secondary);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-neon-cyan);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-neon-purple);
+}
+
+/* Selection */
+::selection {
+  background: var(--color-neon-cyan);
+  color: var(--color-bg-primary);
+}
+
+/* Focus Styles */
+*:focus-visible {
+  outline: 2px solid var(--color-neon-cyan);
+  outline-offset: 2px;
+}
+
+/* Remove default styles */
 li {
-  @apply text-gray-400 hover:text-indigo-500  hover:border-b-2 hover:border-indigo-500 transition-all duration-300 hover:scale-105;
+  list-style: none;
 }
 
 button {
-  @apply bg-indigo-500 hover:bg-indigo-200 text-white hover:text-indigo-500  px-4 py-2 border border-indigo-500 rounded-md flex items-center gap-2;
+  border: none;
+  background: none;
+  cursor: pointer;
+  font-family: inherit;
 }
 
 
