@@ -32,16 +32,18 @@ export const MagneticCursor: React.FC<MagneticCursorProps> = ({ children }) => {
 
     // Find interactive elements
     const updateInteractiveElements = () => {
-      const elements = document.querySelectorAll([
-        'a[href]',
-        'button',
-        '[role="button"]',
-        'input',
-        'textarea',
-        'select',
-        '[tabindex]:not([tabindex="-1"])',
-        '.interactive',
-      ].join(', '));
+      const elements = document.querySelectorAll(
+        [
+          'a[href]',
+          'button',
+          '[role="button"]',
+          'input',
+          'textarea',
+          'select',
+          '[tabindex]:not([tabindex="-1"])',
+          '.interactive',
+        ].join(', ')
+      );
       interactiveElementsRef.current = Array.from(elements) as HTMLElement[];
     };
 
@@ -63,31 +65,33 @@ export const MagneticCursor: React.FC<MagneticCursorProps> = ({ children }) => {
       if (!cursor) return;
 
       let isNearInteractive = false;
-      const threshold = 100;
+      const threshold = 240;
 
       interactiveElementsRef.current.forEach((element) => {
         const rect = element.getBoundingClientRect();
         const centerX = rect.left + rect.width / 2;
         const centerY = rect.top + rect.height / 2;
-        
+
         const distance = Math.sqrt(
           Math.pow(position.x - centerX, 2) + Math.pow(position.y - centerY, 2)
         );
 
         if (distance < threshold) {
           isNearInteractive = true;
-          
+
           // Calculate magnetic pull
           const force = Math.max(0, (threshold - distance) / threshold);
           const pullX = (centerX - position.x) * force * 0.3;
           const pullY = (centerY - position.y) * force * 0.3;
-          
-          cursor.style.transform = `translate(${position.x + pullX}px, ${position.y + pullY}px) scale(${1 + force * 0.5})`;
+
+          cursor.style.transform = `translate(${position.x + pullX}px, ${
+            position.y + pullY
+          }px) scale(${1 + force * 0.5})`;
         }
       });
 
       setIsActive(isNearInteractive);
-      
+
       if (!isNearInteractive) {
         cursor.style.transform = `translate(${position.x}px, ${position.y}px) scale(1)`;
       }
@@ -103,19 +107,24 @@ export const MagneticCursor: React.FC<MagneticCursorProps> = ({ children }) => {
       {isVisible && (
         <motion.div
           ref={cursorRef}
-          className="pointer-events-none fixed z-[9999] rounded-full mix-blend-difference"
+          className='pointer-events-none fixed z-[9999] rounded-full mix-blend-difference backdrop-blur-sm border border-white/20'
           style={{
-            left: -12,
-            top: -12,
-            width: 24,
-            height: 24,
+            left: -20,
+            top: -20,
+            width: 40,
+            height: 40,
           }}
           animate={{
-            scale: isActive ? 1.5 : 1,
-            backgroundColor: isActive ? '#00ffff' : '#ffffff',
+            scale: isActive ? 1.8 : 1,
+            backgroundColor: isActive
+              ? 'rgba(0, 255, 255, 0.2)'
+              : 'rgba(255, 255, 255, 0.1)',
+            backdropFilter: isActive
+              ? 'blur(2px) contrast(1.1) brightness(1.1)'
+              : 'blur(1px)',
           }}
           transition={{
-            type: "spring",
+            type: 'spring',
             stiffness: 500,
             damping: 28,
           }}

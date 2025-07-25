@@ -53,38 +53,38 @@ const Header = () => {
 
   return (
     <>
-      <motion.header 
-        className="fixed top-0 z-50 w-full glass-strong shadow-lg"
+      <motion.header
+        className='fixed top-0 z-50 w-full glass-strong shadow-lg'
         initial={{ y: -100, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.5, ease: [0.25, 0.46, 0.45, 0.94] }}
       >
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center justify-between h-16">
+        <div className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8'>
+          <div className='flex items-center justify-between h-16'>
             {/* Logo */}
-            <motion.div 
-              className="flex items-center space-x-3"
+            <motion.div
+              className='flex items-center space-x-3'
               whileHover={{ scale: 1.05 }}
             >
-              <motion.div 
-                className="w-10 h-10 bg-gradient-to-br from-cyan-400 to-purple-500 rounded-full flex items-center justify-center font-bold text-white shadow-lg shadow-cyan-500/25"
+              <motion.div
+                className='w-10 h-10 bg-gradient-to-br from-cyan-400 to-purple-500 rounded-full flex items-center justify-center font-bold text-white shadow-lg shadow-cyan-500/25'
                 whileHover={{ rotate: 360 }}
                 transition={{ duration: 0.3 }}
               >
                 BJ
               </motion.div>
-              <div className="hidden sm:block">
-                <h2 className="text-sm font-semibold text-text-primary">
+              <div className='hidden sm:block'>
+                <h2 className='text-sm font-semibold text-text-primary'>
                   Bijaya Adhikari
                 </h2>
-                <p className="text-xs text-text-secondary">
+                <p className='text-xs text-text-secondary'>
                   bijayadhikari107@gmail.com
                 </p>
               </div>
             </motion.div>
 
             {/* Desktop Navigation */}
-            <nav className="hidden md:flex items-center space-x-8">
+            <nav className='hidden md:flex items-center space-x-8'>
               {[
                 { name: 'Home', href: '#banner' },
                 { name: 'About', href: '#about' },
@@ -95,11 +95,11 @@ const Header = () => {
                 <button
                   key={item.name}
                   onClick={() => handleNavigation(item.href)}
-                  className="text-sm font-medium text-text-secondary hover:text-cyan-400 transition-colors relative group"
+                  className='text-sm font-medium text-text-secondary hover:text-cyan-400 transition-colors relative group'
                 >
                   {item.name}
                   <motion.span
-                    className="absolute -bottom-1 left-0 w-0 h-0.5 bg-cyan-400"
+                    className='absolute -bottom-1 left-0 w-0 h-0.5 bg-cyan-400'
                     initial={{ width: 0 }}
                     whileHover={{ width: '100%' }}
                     transition={{ duration: 0.2 }}
@@ -110,14 +110,15 @@ const Header = () => {
 
             {/* Desktop Contact Button */}
             <motion.div
-              className="hidden md:block"
+              className='hidden md:block'
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
               <Button
                 onClick={() => setIsModelOpen(true)}
                 leftIcon={<Mail size={16} />}
-                size="sm"
+                size='sm'
+                className='text-cyan'
               >
                 Send Message
               </Button>
@@ -125,7 +126,7 @@ const Header = () => {
 
             {/* Mobile Menu Button */}
             <motion.button
-              className="md:hidden p-2 text-text-secondary hover:text-cyan-400 transition-colors"
+              className='md:hidden p-2 text-text-secondary hover:text-cyan-400 transition-colors'
               onClick={toggleMenu}
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.9 }}
@@ -142,28 +143,30 @@ const Header = () => {
           <>
             {/* Backdrop */}
             <motion.div
-              className="fixed inset-0 z-40 bg-black/60 backdrop-blur-sm"
+              className='fixed inset-0 z-40 bg-black/60 backdrop-blur-sm'
               variants={backdropVariants}
-              initial="closed"
-              animate="open"
-              exit="closed"
+              initial='closed'
+              animate='open'
+              exit='closed'
               onClick={closeMenu}
             />
 
             {/* Menu Panel */}
             <motion.nav
-              className="fixed top-0 right-0 w-4/5 max-w-sm h-full glass-strong shadow-2xl flex flex-col"
+              className='fixed top-0 right-0 w-4/5 max-w-sm h-full glass-strong shadow-2xl flex flex-col'
               variants={menuVariants}
-              initial="closed"
-              animate="open"
-              exit="closed"
-              transition={{ type: "spring", stiffness: 300, damping: 30 }}
+              initial='closed'
+              animate='open'
+              exit='closed'
+              transition={{ type: 'spring', stiffness: 300, damping: 30 }}
             >
-              <div className="flex justify-between items-center p-6 border-b border-border">
-                <h3 className="text-lg font-semibold text-text-primary">Menu</h3>
+              <div className='flex justify-between items-center p-6 border-b border-border'>
+                <h3 className='text-lg font-semibold text-text-primary'>
+                  Menu
+                </h3>
                 <motion.button
                   onClick={closeMenu}
-                  className="p-2 text-text-secondary hover:text-cyan-400 transition-colors"
+                  className='p-2 text-text-secondary hover:text-cyan-400 transition-colors'
                   whileHover={{ scale: 1.1, rotate: 90 }}
                   whileTap={{ scale: 0.9 }}
                 >
@@ -171,7 +174,7 @@ const Header = () => {
                 </motion.button>
               </div>
 
-              <div className="flex-1 flex flex-col justify-center p-6 space-y-6">
+              <div className='flex-1 flex flex-col justify-center p-6 space-y-6'>
                 {[
                   { name: 'Home', href: '#banner' },
                   { name: 'About', href: '#about' },
@@ -182,7 +185,7 @@ const Header = () => {
                   <motion.button
                     key={item.name}
                     onClick={() => handleNavigation(item.href)}
-                    className="text-lg font-medium text-text-secondary hover:text-cyan-400 transition-colors py-3 px-4 rounded-lg hover:bg-surface/50 w-full text-left"
+                    className='text-lg font-medium text-text-secondary hover:text-cyan-400 transition-colors py-3 px-4 rounded-lg hover:bg-surface/50 w-full text-left'
                     initial={{ opacity: 0, x: 50 }}
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ delay: index * 0.1 }}
@@ -191,9 +194,9 @@ const Header = () => {
                     {item.name}
                   </motion.button>
                 ))}
-                
+
                 <motion.div
-                  className="pt-6"
+                  className='pt-6'
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.4 }}
@@ -204,7 +207,7 @@ const Header = () => {
                       closeMenu();
                     }}
                     leftIcon={<Mail size={16} />}
-                    className="w-full"
+                    className='w-full'
                   >
                     Send Message
                   </Button>
@@ -212,8 +215,8 @@ const Header = () => {
               </div>
 
               {/* Social Links */}
-              <div className="p-6 border-t border-border">
-                <div className="flex justify-center space-x-4">
+              <div className='p-6 border-t border-border'>
+                <div className='flex justify-center space-x-4'>
                   {[
                     { icon: 'GitHub', href: 'https://github.com' },
                     { icon: 'LinkedIn', href: 'https://linkedin.com' },
@@ -222,11 +225,11 @@ const Header = () => {
                     <motion.a
                       key={index}
                       href={social.href}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="p-2 text-text-secondary hover:text-cyan-400 transition-colors font-mono text-sm"
+                      target='_blank'
+                      rel='noopener noreferrer'
+                      className='p-2 text-text-secondary hover:text-cyan-400 transition-colors font-mono text-sm'
                       whileHover={{ scale: 1.1 }}
-                      transition={{ type: "spring", stiffness: 300 }}
+                      transition={{ type: 'spring', stiffness: 300 }}
                     >
                       {social.icon}
                     </motion.a>
