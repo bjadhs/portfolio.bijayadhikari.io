@@ -6,13 +6,13 @@ const Projects = () => {
   const navigate = useNavigate();
 
   return (
-    <section className='min-h-screen bg-gradient-to-br from-slate-50 to-blue-50'>
+    <section className='min-h-screen bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 text-white dark:from-slate-50 dark:to-blue-50 dark:text-text-primary'>
       <div className='container mx-auto px-10 py-16'>
         <div className='text-center mb-16'>
-          <h2 className='text-4xl md:text-5xl font-bold text-gray-900 mb-6'>
+          <h2 className='text-4xl md:text-5xl font-bold text-white mb-6 dark:text-gray-900'>
             Featured Projects
           </h2>
-          <p className='text-xl text-gray-600 max-w-3xl mx-auto'>
+          <p className='text-xl text-gray-300 max-w-3xl mx-auto dark:text-gray-600'>
             Here are some of my recent works that showcase my skills in web and
             mobile development, Devops and AI.
           </p>
@@ -22,9 +22,9 @@ const Projects = () => {
           {projects.map((project) => (
             <div
               key={project.id}
-              className='group relative bg-white rounded-2xl shadow-lg overflow-hidden 
+              className='group relative bg-slate-800 rounded-2xl shadow-lg overflow-hidden 
                 hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 ease-out
-                flex flex-col h-full'
+                flex flex-col h-full dark:bg-white'
             >
               <div className='relative overflow-hidden'>
                 <img
@@ -49,7 +49,7 @@ const Projects = () => {
                       className='p-2 bg-white/90 rounded-full hover:bg-white hover:scale-110 
                         transition-all duration-200 shadow-lg'
                     >
-                      <ExternalLink size={18} className='text-gray-700' />
+                      <ExternalLink size={18} className='text-gray-700 dark:text-gray-700' />
                     </a>
                   )}
                   {project.githubUrl && (
@@ -60,7 +60,7 @@ const Projects = () => {
                       className='p-2 bg-white/90 rounded-full hover:bg-white hover:scale-110 
                         transition-all duration-200 shadow-lg'
                     >
-                      <Github size={18} className='text-gray-700' />
+                      <Github size={18} className='text-gray-700 dark:text-gray-700' />
                     </a>
                   )}
                 </div>
@@ -68,12 +68,12 @@ const Projects = () => {
 
               <div className='p-6 flex-1 flex flex-col'>
                 <h3
-                  className='text-xl lg:text-2xl font-bold text-gray-900 mb-3 group-hover:text-blue-600 
-                  transition-colors duration-300'
+                  className='text-xl lg:text-2xl font-bold text-white mb-3 group-hover:text-cyan-400 
+                  transition-colors duration-300 dark:text-gray-900 dark:group-hover:text-blue-600'
                 >
                   {project.title}
                 </h3>
-                <p className='text-gray-600 mb-4 leading-relaxed flex-1 text-sm lg:text-base'>
+                <p className='text-gray-300 mb-4 leading-relaxed flex-1 text-sm lg:text-base dark:text-gray-600'>
                   {project.description}
                 </p>
 
@@ -81,9 +81,9 @@ const Projects = () => {
                   {project.technologies.map((tech, index) => (
                     <span
                       key={index}
-                      className='px-2 lg:px-3 py-1 bg-blue-50 text-blue-700 rounded-full text-xs lg:text-sm font-medium
-                        hover:bg-blue-100 transition-colors duration-200 cursor-default
-                        group-hover:animate-pulse'
+                      className='px-2 lg:px-3 py-1 bg-slate-700 text-slate-100 rounded-full text-xs lg:text-sm font-medium
+                        hover:bg-slate-600 transition-colors duration-200 cursor-default
+                        group-hover:animate-pulse dark:bg-blue-50 dark:text-blue-700 dark:hover:bg-blue-100'
                       style={{ animationDelay: `${index * 100}ms` }}
                     >
                       {tech}
@@ -113,7 +113,7 @@ const Projects = () => {
             }}
             className='px-8 py-3 bg-gradient-to-r from-blue-600 to-purple-600 
             text-white font-semibold rounded-full hover:from-blue-700 hover:to-purple-700 
-            hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl'
+            hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl dark:text-gray-900'
           >
             View All Projects
           </button>

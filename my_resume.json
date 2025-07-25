@@ -1,0 +1,84 @@
+{
+  "personal_info": {
+    "name": "Bijaya Adhikari",
+    "address": "23/86 Henry Kendall Street, ACT, AUSTRALIA",
+    "phone": "+61-424428959",
+    "email": "bijayadhikari107@gmail.com"
+  },
+  "expertise": [
+    "UI/UX Design & Prototype (Adobe XD, FIGMA)",
+    "HTML, CSS & JAVASCRIPT",
+    "REACT & NODEJS (MERN Stack)",
+    "Basic AWS, docker and microservices",
+    "Basic DSA and System Design",
+    "Basic Linux and Bash scripting",
+    "Mobile Development in Swift and React Native"
+  ],
+  "education": [
+    {
+      "institution": "NOTRE DAME H.S.B.S",
+      "years": "2003-2008",
+      "level": "School Level"
+    },
+    {
+      "institution": "OXFORD (OCEM)",
+      "years": "2011-2013",
+      "degree": "Bachelor of Electrical and Electronics Engineering"
+    },
+    {
+      "institution": "CHARLES STURT UNIVERSITY",
+      "years":"2017-2019",
+      "degree": "Master of Information Technology"
+    }
+  ],
+  "work_experience": [
+    {
+      "company": "Vascos Charcoal Chicken",
+      "role": "Chicken Cook/All-rounder",
+      "years": "Aug 2019 - July 2021"
+    },
+    {
+      "company": "WildFlour Bakery",
+      "role": "Bakery",
+      "years": "Mar 2021 - Dec 2022"
+    },
+    {
+      "company": "DoorDash, Menulog, Uber",
+      "role": "Delivery Driver/Rider",
+      "years": "2021-2022"
+    },
+    {
+      "company": "Jindalee Aged Care",
+      "role": "Cook/Assistance",
+      "years": "Aug 2023 - Feb 2025"
+    },
+    {
+      "company": "Coles Merchandising",
+      "role": "Sales/Merchandiser",
+      "years": "Jan 2024 - now"
+    }
+
+  ],
+  "career_profile": "Dedicated Information Technology graduate with strong academic background & extensive knowledge in information technology, and technical support. A passionate self-taught web and mobile application developer determined to grow in the field of Software Engineering. A hardworking and detail-oriented individual with a highly professional attitude, productive workflow, strong debugging and problem solving, relationship-building skills and ability to perform well in a team. Looking for an entry level opportunity in a dynamic organization where my skills will be fully utilized.",
+  "core_qualifications": [
+    "Demonstrate a strong IT academic background with entry level expertise in any kind of technological role.",
+    "Proficient in a range of computer systems, languages, tools and testing methodologies.",
+    "Strong analytical, problem solving and critical thinking skills to identify key technology and business processes.",
+    "Excellent written and verbal communication skills.",
+    "Extensive knowledge of Computer Science fundamentals in object-oriented design, data structure and algorithm, problem solving, and complexity analysis.",
+    "Strong base on dynamically typed JavaScript language, worked in different project-level websites.",
+    "Deep knowledge on Front-end JavaScript framework React, Redux connecting to backend services like firebase and NodeJS.",
+    "One year of experience in Flutter Mobile cross-platform technology."
+  ],
+  "project_showcase": {
+    "github": "https://github.com/Bijayadhs/",
+    "projects": [
+      "JB-HIFI/ Netflix /AirBnb Clone (React Javascript CSS)",
+      "A Grocery Shop (Flutter and Firebase)",
+      "4Q - A Productivity App (SwiftUI)",
+      "My Portfolio (HTML,CSS,JS, React)",
+      "360 Degree Cleaning Services (NextJS/TailwindCSS)",
+      "A Restaurant App (NextJS and NodeJS)"
+    ]
+  }
+}

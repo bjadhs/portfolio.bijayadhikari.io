@@ -1,124 +1,215 @@
-import {
-  ArrowRight,
-  Download,
-  GithubIcon,
-  LinkedinIcon,
-  TwitterIcon,
-} from 'lucide-react';
+import { ArrowRight, Download } from 'lucide-react';
+import { motion } from 'framer-motion';
+import { Button } from './ui/Button';
 
 const Banner = () => {
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.2,
+        delayChildren: 0.3,
+      },
+    },
+  };
+
+  const itemVariants = {
+    hidden: { y: 50, opacity: 0 },
+    visible: {
+      y: 0,
+      opacity: 1,
+      transition: {
+        type: 'spring',
+        stiffness: 100,
+        damping: 10,
+      } as const,
+    },
+  };
+
   return (
-    <section className='relative min-h-screen overflow-hidden bg-gradient-to-br from-white to-gray-50'>
-      {/* Background decorative elements */}
+    <section
+      id='banner'
+      className='relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-bg-primary via-bg-secondary to-bg-primary'
+    >
+      {/* Animated background elements */}
       <div className='absolute inset-0 overflow-hidden'>
-        <img
-          src='/bg2.png'
-          alt=''
-          className='absolute -left-10 top-1/4 w-40 -rotate-45 opacity-25 blur-sm'
-        />
-        <img
-          src='/bg3.png'
-          alt=''
-          className='absolute right-1/4 top-1/3 w-60 -rotate-12 opacity-20 blur-sm'
-        />
-        <img
-          src='/bg4.png'
-          alt=''
-          className='absolute -bottom-20 right-0 w-96 -rotate-12 opacity-15'
-        />
-        <div className='absolute -right-24 -top-24 h-96 w-96 rounded-full bg-indigo-100 opacity-50 blur-3xl'></div>
-        <div className='absolute -left-24 -bottom-24 h-96 w-96 rounded-full bg-blue-100 opacity-50 blur-3xl'></div>
+        <div className='absolute top-1/4 left-1/4 w-96 h-96 bg-cyan-500/10 rounded-full blur-3xl animate-pulse' />
+        <div className='absolute top-3/4 right-1/4 w-96 h-96 bg-purple-500/10 rounded-full blur-3xl animate-pulse animation-delay-2000' />
+        <div className='absolute bottom-1/4 left-1/2 w-96 h-96 bg-pink-500/10 rounded-full blur-3xl animate-pulse animation-delay-4000' />
       </div>
 
-      <div className='container mx-auto px-6 lg:px-8'>
-        <div className='relative mx-auto grid max-w-7xl items-center gap-12 md:grid-cols-2'>
+      {/* Grid overlay */}
+      <div className='absolute inset-0 bg-grid-pattern opacity-5' />
+
+      <div className='container mx-auto px-4 sm:px-6 lg:px-8 py-20'>
+        <div className='max-w-7xl mx-auto grid lg:grid-cols-2 gap-12 items-center'>
           {/* Left Column - Text Content */}
-          <div className='z-10 flex flex-col items-start space-y-6 md:pr-6'>
-            <div className='flex items-center gap-2'>
-              <div className='h-1.5 w-16 rounded bg-indigo-500'></div>
-              <span className='font-medium text-gray-600'>
-                Software Engineer
-              </span>
-            </div>
-
-            <h1 className='text-4xl font-extrabold tracking-tight text-gray-900 md:text-5xl lg:text-6xl'>
-              <span className='inline-block'>👋🏼 Hey there,</span>
-              <br />
-              <span>
-                I am{' '}
-                <span className='relative inline-block text-indigo-600'>
-                  BIJAYA ADHIKARI
-                  <span className='absolute bottom-0 left-0 h-3 w-full bg-indigo-200 opacity-40'></span>
+          <motion.div
+            className='space-y-8 z-10'
+            variants={containerVariants}
+            initial='hidden'
+            animate='visible'
+          >
+            <motion.div variants={itemVariants}>
+              <motion.div
+                className='inline-flex items-center space-x-2 px-4 py-2 glass rounded-full neon-glow'
+                whileHover={{ scale: 1.05 }}
+              >
+                <div className='w-2 h-2 bg-cyan-400 rounded-full animate-pulse' />
+                <span className='text-sm font-medium text-cyan-400'>
+                  Software Engineer
                 </span>
-              </span>
-            </h1>
+              </motion.div>
+            </motion.div>
 
-            <p className='max-w-2xl text-lg text-gray-600'>
-              Software engineer specializing in front-end and mobile
-              development. I leverage React, Next.js, and React Native to craft
-              intuitive and performant applications. My focus is on creating
-              solutions that solve real-world problems and enhance user
-              engagement.
-            </p>
+            <motion.div variants={itemVariants} className='space-y-4'>
+              <h1 className='text-5xl md:text-6xl lg:text-7xl font-bold leading-tight'>
+                <span className='block text-text-primary'>👋🏼 Hey there,</span>
+                <span className='block'>
+                  I'm{' '}
+                  <span className='bg-gradient-to-r from-cyan-400 via-purple-500 to-pink-500 bg-clip-text text-transparent'>
+                    Bijaya Adhikari
+                  </span>
+                </span>
+              </h1>
+            </motion.div>
 
-            <div className='flex flex-wrap items-center gap-4'>
-              <a
-                href='#projects'
-                className='group flex items-center gap-2 rounded-full bg-indigo-600 px-6 py-3 text-base font-medium text-white shadow-lg transition-all hover:bg-indigo-700 hover:shadow-indigo-200/50'
+            <motion.p
+              variants={itemVariants}
+              className='text-xl md:text-2xl text-text-secondary leading-relaxed max-w-2xl'
+            >
+              Full-stack developer specializing in React, Next.js, and React
+              Native. I craft beautiful, performant applications that solve
+              real-world problems and deliver exceptional user experiences.
+            </motion.p>
+
+            <motion.div
+              variants={itemVariants}
+              className='flex flex-wrap gap-4'
+            >
+              <Button
+                variant='primary'
+                size='lg'
+                rightIcon={<ArrowRight size={20} />}
+                onClick={() =>
+                  document
+                    .getElementById('projects')
+                    ?.scrollIntoView({ behavior: 'smooth' })
+                }
               >
                 View Projects
-                <ArrowRight
-                  size={18}
-                  className='transition-transform group-hover:translate-x-1'
-                />
-              </a>
-              <a
-                href='/resume.pdf'
-                className='group flex items-center gap-2 rounded-full border-2 border-gray-300 bg-white px-6 py-3 text-base font-medium text-gray-700 shadow-sm transition-all hover:border-indigo-300 hover:text-indigo-600 hover:shadow-md'
+              </Button>
+              <Button
+                variant='secondary'
+                size='lg'
+                rightIcon={<Download size={20} />}
+                onClick={() => window.open('/resume.pdf', '_blank')}
               >
-                <Download
-                  size={18}
-                  className='transition-transform group-hover:-translate-y-1'
-                />
                 Download CV
-              </a>
-            </div>
+              </Button>
+            </motion.div>
 
-            <div className='mt-8 flex items-center gap-6 pt-4'>
-              <a
-                href='https://github.com'
-                className='rounded-full bg-gray-100 p-2 text-gray-600 transition-all hover:bg-indigo-100 hover:text-indigo-600 hover:shadow-md'
-              >
-                <GithubIcon size={22} />
-              </a>
-              <a
-                href='https://linkedin.com'
-                className='rounded-full bg-gray-100 p-2 text-gray-600 transition-all hover:bg-indigo-100 hover:text-indigo-600 hover:shadow-md'
-              >
-                <LinkedinIcon size={22} />
-              </a>
-              <a
-                href='https://twitter.com'
-                className='rounded-full bg-gray-100 p-2 text-gray-600 transition-all hover:bg-indigo-100 hover:text-indigo-600 hover:shadow-md'
-              >
-                <TwitterIcon size={22} />
-              </a>
-            </div>
-          </div>
+            <motion.div variants={itemVariants} className='flex space-x-6'>
+              {[
+                { href: 'https://github.com', label: 'GitHub' },
+                { href: 'https://linkedin.com', label: 'LinkedIn' },
+                { href: 'https://twitter.com', label: 'Twitter' },
+              ].map((social) => (
+                <motion.a
+                  key={social.label}
+                  href={social.href}
+                  target='_blank'
+                  rel='noopener noreferrer'
+                  className='p-3 glass rounded-lg text-text-secondary hover:text-cyan-400 hover:border-cyan-400/50 transition-all'
+                  whileHover={{ scale: 1.1, y: -2 }}
+                  whileTap={{ scale: 0.9 }}
+                >
+                  {social.label}
+                </motion.a>
+              ))}
+            </motion.div>
+          </motion.div>
 
           {/* Right Column - Profile Image */}
-          <div className='relative z-10 hidden md:block'>
-            <div className='relative mx-auto aspect-square max-w-md overflow-hidden rounded-full border-8 border-white bg-indigo-50 shadow-2xl'>
-              <img
-                className='h-full w-full object-cover object-center'
-                src='/bj.png'
-                alt='Bijaya Adhikari'
+          <motion.div
+            className='relative flex justify-center lg:justify-end'
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.8, delay: 0.5 }}
+          >
+            <div className='relative'>
+              <motion.div
+                className='relative w-80 h-80 md:w-96 md:h-96 glass-strong rounded-2xl p-2 neon-glow'
+                animate={{
+                  rotateY: [0, 5, -5, 0],
+                  rotateX: [0, -5, 5, 0],
+                }}
+                transition={{
+                  duration: 6,
+                  repeat: Infinity,
+                  repeatType: 'reverse',
+                  ease: 'easeInOut',
+                }}
+                style={{ transformStyle: 'preserve-3d' }}
+              >
+                <div className='relative w-full h-full rounded-xl overflow-hidden'>
+                  <img
+                    src='/bj.png'
+                    alt='Bijaya Adhikari'
+                    className='w-full h-full object-cover'
+                  />
+                  <div className='absolute inset-0 bg-gradient-to-t from-bg-primary/50 to-transparent' />
+                </div>
+              </motion.div>
+
+              {/* Floating elements */}
+              <motion.div
+                className='absolute -top-4 -right-4 w-20 h-20 bg-gradient-to-br from-cyan-400 to-blue-500 rounded-full blur-sm'
+                animate={{
+                  y: [0, -10, 0],
+                  scale: [1, 1.1, 1],
+                }}
+                transition={{
+                  duration: 3,
+                  repeat: Infinity,
+                  ease: 'easeInOut',
+                }}
+              />
+              <motion.div
+                className='absolute -bottom-4 -left-4 w-16 h-16 bg-gradient-to-br from-purple-500 to-pink-500 rounded-full blur-sm'
+                animate={{
+                  y: [0, 10, 0],
+                  scale: [1, 1.2, 1],
+                }}
+                transition={{
+                  duration: 4,
+                  repeat: Infinity,
+                  ease: 'easeInOut',
+                }}
               />
             </div>
-            <div className='absolute -bottom-4 -right-4 -z-10 h-full w-full rounded-full bg-indigo-200 opacity-30'></div>
-          </div>
+          </motion.div>
         </div>
       </div>
+
+      {/* Scroll indicator */}
+      <motion.div
+        className='absolute bottom-8 left-1/2 transform -translate-x-1/2'
+        animate={{
+          y: [0, 10, 0],
+        }}
+        transition={{
+          duration: 2,
+          repeat: Infinity,
+          ease: 'easeInOut',
+        }}
+      >
+        <div className='w-6 h-10 glass rounded-full flex justify-center items-start p-2'>
+          <div className='w-1 h-3 bg-cyan-400 rounded-full animate-bounce' />
+        </div>
+      </motion.div>
+
     </section>
   );
 };
