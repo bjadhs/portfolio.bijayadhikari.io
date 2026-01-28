@@ -1,18 +1,18 @@
 import React from 'react';
-import { motion } from 'framer-motion';
+import { motion, Variants } from 'framer-motion';
 
 interface SkeletonProps {
   className?: string;
 }
 
-const shimmer = {
+const shimmer: Variants = {
   initial: { x: '-100%' },
   animate: {
     x: '100%',
     transition: {
       duration: 1.5,
       repeat: Infinity,
-      repeatType: 'loop' as const,
+      repeatType: 'loop',
       ease: 'linear',
     },
   },

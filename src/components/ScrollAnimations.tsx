@@ -21,7 +21,6 @@ export const ScrollReveal: React.FC<ScrollRevealProps> = ({
   delay = 0,
   duration = 0.6,
   direction = 'up',
-  staggerChildren = 0.1,
   className = '',
 }) => {
   const ref = useRef(null);
