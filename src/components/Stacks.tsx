@@ -28,14 +28,14 @@ const stacks = [
 
 const Stacks = () => {
   return (
-    <div className='w-full flex justify-center items-center space-x-20 p-4 bg-blue-50'>
+    <div className='w-full flex justify-center items-center space-x-20 p-4 bg-bg-secondary'>
       {stacks.map((stack, index) => {
         return (
           <img
             key={index}
             src={stack.img}
             alt={stack.title}
-            className='w-30 h-15'
+            className='w-30 h-15 transition-all duration-300 hover:scale-110 hover:brightness-125 hover:saturate-125 cursor-pointer'
           />
         );
       })}

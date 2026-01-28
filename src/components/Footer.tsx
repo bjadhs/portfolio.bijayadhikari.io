@@ -1,13 +1,13 @@
 const Footer = () => {
   return (
-    <footer className='py-12 bg-gradient-to-t from-gray-100 to-white'>
+    <footer className='py-12 bg-gradient-to-t from-bg-secondary to-bg-primary border-t border-border/50'>
       <div className='container mx-auto px-4'>
         <div className='flex flex-col items-center justify-center space-y-6'>
           <div className='flex space-x-6'>
             <a
               href='https://github.com'
               target='_blank'
-              className='rounded-full bg-gray-100 p-2 text-gray-600 transition-all hover:bg-indigo-100 hover:text-indigo-600 hover:shadow-md'
+              className='rounded-full glass p-2 text-text-secondary transition-all hover:bg-cyan-400/20 hover:text-cyan-400 hover:scale-110 hover:shadow-md border border-border/30'
               aria-label='Github'
             >
               <svg
@@ -27,7 +27,7 @@ const Footer = () => {
             <a
               href='https://linkedin.com'
               target='_blank'
-              className='rounded-full bg-gray-100 p-2 text-gray-600 transition-all hover:bg-indigo-100 hover:text-indigo-600 hover:shadow-md'
+              className='rounded-full glass p-2 text-text-secondary transition-all hover:bg-cyan-400/20 hover:text-cyan-400 hover:scale-110 hover:shadow-md border border-border/30'
               aria-label='LinkedIn'
             >
               <svg
@@ -49,7 +49,7 @@ const Footer = () => {
             <a
               href='https://twitter.com'
               target='_blank'
-              className='rounded-full bg-gray-100 p-2 text-gray-600 transition-all hover:bg-indigo-100 hover:text-indigo-600 hover:shadow-md'
+              className='rounded-full glass p-2 text-text-secondary transition-all hover:bg-cyan-400/20 hover:text-cyan-400 hover:scale-110 hover:shadow-md border border-border/30'
               aria-label='Twitter'
             >
               <svg
@@ -67,7 +67,7 @@ const Footer = () => {
               </svg>
             </a>
           </div>
-          <p className='text-gray-600 text-sm'>
+          <p className='text-text-tertiary text-sm'>
             Bijaya Adhikari © {new Date().getFullYear()} All rights reserved.
           </p>
         </div>

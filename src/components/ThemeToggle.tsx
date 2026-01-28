@@ -9,7 +9,7 @@ export const ThemeToggle: React.FC = () => {
   return (
     <motion.button
       onClick={toggleTheme}
-      className="fixed top-4 right-4 z-50 p-3 glass rounded-full neon-glow interactive"
+      className="fixed bottom-6 right-6 z-50 p-3 glass rounded-full neon-glow hover:bg-cyan-400/10 hover:border-cyan-400/50 transition-colors duration-200 shadow-lg"
       whileHover={{ scale: 1.1 }}
       whileTap={{ scale: 0.9 }}
       transition={{ type: "spring", stiffness: 400, damping: 17 }}
