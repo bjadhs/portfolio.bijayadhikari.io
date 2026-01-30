@@ -42,17 +42,17 @@ const Banner = () => {
       {/* Grid overlay */}
       <div className='absolute inset-0 bg-grid-pattern opacity-5' />
 
-      <div className='container mx-auto px-4 sm:px-6 lg:px-8 py-20'>
-        <div className='max-w-7xl mx-auto grid lg:grid-cols-2 gap-12 items-center'>
+      <div className='container mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-20'>
+        <div className='max-w-7xl mx-auto grid lg:grid-cols-2 gap-6 lg:gap-12 items-center'>
           {/* Left Column - Text Content */}
           <motion.div
-            className='space-y-8 z-10'
+            className='space-y-4 sm:space-y-6 z-10'
             variants={containerVariants}
             initial='hidden'
             animate='visible'
           >
-            <motion.div variants={itemVariants} className='space-y-2'>
-              <h1 className='text-2xl md:text-3xl lg:text-4xl font-bold leading-tight'>
+            <motion.div variants={itemVariants} className='space-y-1 sm:space-y-2'>
+              <h1 className='text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold leading-tight'>
                 <span className='block text-text-primary'>👋🏼 Hey there,</span>
                 <span className='block'>
                   I'm{' '}
@@ -65,7 +65,7 @@ const Banner = () => {
 
             <motion.p
               variants={itemVariants}
-              className='text-sm md:text-md text-text-secondary leading-relaxed max-w-2xl'
+              className='text-xs md:text-sm text-text-secondary leading-relaxed max-w-2xl'
             >
               A self taught Full-Stack developer specializing in React, Next.js,
               and React Native. I craft beautiful, performant applications that
@@ -75,31 +75,55 @@ const Banner = () => {
 
             <motion.div
               variants={itemVariants}
-              className='flex flex-wrap gap-4'
+              className='flex flex-col sm:flex-row gap-3 items-stretch sm:items-center'
             >
-              <Button
-                variant='primary'
-                size='lg'
-                rightIcon={<ArrowRight size={20} />}
+              {/* Astonishing View Projects CTA Button */}
+              <motion.button
                 onClick={() =>
                   document
                     .getElementById('projects')
                     ?.scrollIntoView({ behavior: 'smooth' })
                 }
+                className='group relative px-6 py-2.5 font-bold text-white rounded-xl overflow-hidden'
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
               >
-                View Projects
-              </Button>
+                {/* Animated gradient background */}
+                <div className='absolute inset-0 bg-gradient-to-r from-violet-600 via-fuchsia-500 to-pink-500 animate-gradient-x' />
+                
+                {/* Shimmer effect */}
+                <div className='absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000 ease-out' />
+                
+                {/* Glowing border effect */}
+                <div className='absolute inset-0 rounded-xl bg-gradient-to-r from-cyan-400 via-fuchsia-400 to-yellow-400 opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-sm' />
+                <div className='absolute inset-[2px] rounded-xl bg-gradient-to-r from-violet-600 via-fuchsia-500 to-pink-500' />
+                
+                {/* Pulse ring animation */}
+                <div className='absolute inset-0 rounded-xl animate-ping bg-fuchsia-500/30 duration-1000' />
+                
+                {/* Content */}
+                <span className='relative z-10 flex items-center justify-center gap-2 text-sm sm:text-base'>
+                  <span className='drop-shadow-lg'>View Projects</span>
+                  <motion.span
+                    animate={{ x: [0, 5, 0] }}
+                    transition={{ duration: 1.5, repeat: Infinity, ease: 'easeInOut' }}
+                  >
+                    <ArrowRight size={18} className='drop-shadow-lg' />
+                  </motion.span>
+                </span>
+              </motion.button>
+
               <Button
                 variant='secondary'
-                size='lg'
-                rightIcon={<Download size={20} />}
+                size='md'
+                rightIcon={<Download size={18} />}
                 onClick={() => window.open('/resume.pdf', '_blank')}
               >
                 Download CV
               </Button>
             </motion.div>
 
-            <motion.div variants={itemVariants} className='flex space-x-6'>
+            <motion.div variants={itemVariants} className='flex space-x-3 sm:space-x-4'>
               {[
                 { href: 'https://github.com', label: 'GitHub' },
                 { href: 'https://linkedin.com', label: 'LinkedIn' },
@@ -110,9 +134,9 @@ const Banner = () => {
                   href={social.href}
                   target='_blank'
                   rel='noopener noreferrer'
-                  className='p-3 glass rounded-lg text-text-secondary hover:text-cyan-400 hover:border-cyan-400/50 hover:bg-cyan-400/10 transition-all'
-                  whileHover={{ scale: 1.1, y: -2 }}
-                  whileTap={{ scale: 0.9 }}
+                  className='px-2.5 py-1.5 sm:px-3 sm:py-2 text-xs sm:text-sm glass rounded-lg text-text-secondary hover:text-cyan-400 hover:border-cyan-400/50 hover:bg-cyan-400/10 transition-all'
+                  whileHover={{ scale: 1.05, y: -2 }}
+                  whileTap={{ scale: 0.95 }}
                 >
                   {social.label}
                 </motion.a>
@@ -127,10 +151,10 @@ const Banner = () => {
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8, delay: 0.5 }}
           >
-            <div className='relative w-80 h-80 md:w-96 md:h-96'>
-              {/* Decorative geometric shapes */}
+            <div className='relative w-56 h-56 sm:w-72 sm:h-72 md:w-80 md:h-80 lg:w-96 lg:h-96'>
+              {/* Decorative geometric shapes - hidden on mobile */}
               <motion.div
-                className='absolute -top-6 -right-6 w-24 h-24 border-4 border-cyan-400/30 rounded-lg'
+                className='hidden sm:block absolute -top-4 -right-4 sm:-top-6 sm:-right-6 w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 border-4 border-cyan-400/30 rounded-lg'
                 animate={{
                   rotate: [0, 90, 180, 270, 360],
                 }}
@@ -142,7 +166,7 @@ const Banner = () => {
               />
 
               <motion.div
-                className='absolute -bottom-6 -left-6 w-20 h-20 bg-gradient-to-br from-purple-500/20 to-pink-500/20 rounded-full border-2 border-purple-400/30'
+                className='hidden sm:block absolute -bottom-4 -left-4 sm:-bottom-6 sm:-left-6 w-14 h-14 sm:w-16 sm:h-16 md:w-20 md:h-20 bg-gradient-to-br from-purple-500/20 to-pink-500/20 rounded-full border-2 border-purple-400/30'
                 animate={{
                   scale: [1, 1.2, 1],
                 }}
@@ -154,7 +178,7 @@ const Banner = () => {
               />
 
               <motion.div
-                className='absolute top-1/2 -right-4 w-16 h-16 border-4 border-pink-400/20 rounded-full'
+                className='hidden sm:block absolute top-1/2 -right-3 sm:-right-4 w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 border-4 border-pink-400/20 rounded-full'
                 animate={{
                   y: [0, -15, 0],
                 }}
@@ -165,12 +189,12 @@ const Banner = () => {
                 }}
               />
 
-              {/* Grid pattern decoration */}
-              <div className='absolute -top-8 -left-8 w-16 h-16 grid grid-cols-3 gap-2 opacity-30'>
+              {/* Grid pattern decoration - smaller on mobile */}
+              <div className='hidden sm:grid absolute -top-6 -left-6 sm:-top-8 sm:-left-8 w-12 h-12 sm:w-16 sm:h-16 grid-cols-3 gap-1.5 sm:gap-2 opacity-30'>
                 {[...Array(9)].map((_, i) => (
                   <motion.div
                     key={i}
-                    className='w-2 h-2 bg-cyan-400 rounded-sm'
+                    className='w-1.5 h-1.5 sm:w-2 sm:h-2 bg-cyan-400 rounded-sm'
                     animate={{
                       opacity: [0.3, 1, 0.3],
                     }}
@@ -189,7 +213,7 @@ const Banner = () => {
                 whileHover={{ scale: 1.02 }}
                 transition={{ duration: 0.3 }}
               >
-                <div className='relative w-full h-full rounded-xl overflow-hidden group'>
+                <div className='relative w-full h-full rounded-lg sm:rounded-xl overflow-hidden group'>
                   <img
                     src='/bijaya.png'
                     alt='Bijaya Adhikari'
@@ -197,15 +221,15 @@ const Banner = () => {
                   />
                   <div className='absolute inset-0 bg-gradient-to-t from-bg-primary/60 to-transparent' />
 
-                  {/* Animated corner accents */}
-                  <div className='absolute top-4 left-4 w-8 h-8 border-l-2 border-t-2 border-cyan-400/50' />
-                  <div className='absolute bottom-4 right-4 w-8 h-8 border-r-2 border-b-2 border-cyan-400/50' />
+                  {/* Animated corner accents - smaller on mobile */}
+                  <div className='absolute top-2 left-2 sm:top-4 sm:left-4 w-5 h-5 sm:w-8 sm:h-8 border-l-2 border-t-2 border-cyan-400/50' />
+                  <div className='absolute bottom-2 right-2 sm:bottom-4 sm:right-4 w-5 h-5 sm:w-8 sm:h-8 border-r-2 border-b-2 border-cyan-400/50' />
                 </div>
               </motion.div>
 
               {/* Floating line accent */}
               <motion.div
-                className='absolute -bottom-4 left-1/4 w-32 h-1 bg-gradient-to-r from-transparent via-cyan-400 to-transparent'
+                className='absolute -bottom-2 sm:-bottom-4 left-1/4 w-20 sm:w-32 h-1 bg-gradient-to-r from-transparent via-cyan-400 to-transparent'
                 animate={{
                   x: [0, 20, 0],
                   opacity: [0.3, 0.8, 0.3],
@@ -221,9 +245,9 @@ const Banner = () => {
         </div>
       </div>
 
-      {/* Scroll indicator */}
+      {/* Scroll indicator - hidden on small mobile */}
       <motion.div
-        className='absolute bottom-8 left-1/2 transform -translate-x-1/2'
+        className='hidden sm:flex absolute bottom-8 left-1/2 transform -translate-x-1/2'
         animate={{
           y: [0, 10, 0],
         }}
